@@ -17,10 +17,34 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void testMarkdownParse() throws IOException {
+    public void testGetLinksOne() throws IOException {
         Path fileName = Path.of("test-file.md");
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
         assertEquals(List.of("https://something.com", "some-page.html"), links);
+    }
+
+    @Test
+    public void testGetLinksTwo() throws IOException {
+        Path fileName = Path.of("test-file2.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("something.in"), links);
+    }
+
+    @Test
+    public void testGetLinksThree() throws IOException {
+        Path fileName = Path.of("test-file3.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/", "some-page.html"), links);
+    }
+
+    @Test
+    public void testGetLinksFour() throws IOException {
+        Path fileName = Path.of("test-file4.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(List.of(), links);
     }
 }
