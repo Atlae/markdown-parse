@@ -18,7 +18,7 @@ public class MarkdownParse {
             if (openParen < 0 || closeParen < 0) {
                 break;
             }
-            if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket - 1 ) == '!'){
+            if(markdown.charAt(nextOpenBracket - 1 ) == '!'){
                 currentIndex = closeParen + 1;
                 continue; 
             }
