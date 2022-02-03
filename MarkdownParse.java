@@ -18,7 +18,7 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             
             if(openParen<0 || closeParen<0) {
-                continue;
+                break;
             }
                if(nextOpenBracket!=0 && markdown.charAt(nextOpenBracket-1)=='!')
             {
