@@ -1,4 +1,4 @@
-CLASSPATH = ".;lib/*"
+CLASSPATH = "lib/*:."
 
 MarkdownParse.class: MarkdownParse.java
 	javac MarkdownParse.java
